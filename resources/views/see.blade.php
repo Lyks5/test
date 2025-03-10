@@ -2,13 +2,16 @@
 
 @section('content')
 <div class="container mx-auto px-4 py-8" x-data="{ showSortModal: false }">
-    <h2 class="text-2xl font-bold mb-4">Не знаете что посмотреть?</h2>
+    <h2 class="text-2xl font-bold mb-4">Не знаете что выбрать?</h2>
 
     <!-- Кнопка для открытия окна сортировки -->
     <button @click="showSortModal = !showSortModal" class="bg-blue-500 text-white px-4 py-2 rounded-lg mb-4">Сортировать по параметрам</button>
 
     <!-- Окно сортировки -->
-    <div x-show="showSortModal" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 transform scale-95" x-transition:enter-end="opacity-100 transform scale-100" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 transform scale-100" x-transition:leave-end="opacity-0 transform scale-95" class="mt-4 bg-white p-6 rounded-lg shadow-lg mb-6">
+    <div x-show="showSortModal" x-transition:enter="transition ease-out duration-300" 
+    x-transition:enter-start="opacity-0 transform scale-95" x-transition:enter-end="opacity-100 transform scale-100" 
+    x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 transform scale-100" 
+    x-transition:leave-end="opacity-0 transform scale-95" class="mt-4 bg-white p-6 rounded-lg shadow-lg mb-6">
         <h3 class="text-lg font-bold mb-4">Выберите параметры</h3>
         <form action="{{ route('see') }}" method="GET">
             <div class="flex flex-wrap gap-2 mb-4">

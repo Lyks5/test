@@ -19,11 +19,15 @@ class HomeController extends Controller
     // Личный кабинет
     public function index()
     {
-        $like = Like::with('poster')->where('user_id', Auth::user()->id)->get();
-        return view('home', ['like' => $like,
-       
-        'consultations' => $user->contactRequests()->latest()->get(),]);
+        $user = Auth::user(); // Получаем текущего пользователя
+        $likes = Like::with('poster')->where('user_id', $user->id)->get();
+        $consultations = $user->contactRequests()->latest()->get();
         
+        return view('home', [
+            'like' => $likes,
+            'repairs' => $user->repairs()->latest()->get(),
+            'consultations' => $consultations,
+        ]);
     }
 
     public function authenticated(Request $request, $user)

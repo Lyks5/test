@@ -51,10 +51,7 @@
                     </button>
 
                     <!-- Кнопка Yandex -->
-                    <a href="{{ route('yandex') }}" 
-                       class="w-full flex items-center justify-center py-2.5 bg-[#FFCC00] hover:bg-[#FFD633] text-black font-semibold rounded-lg transition-all duration-300 transform hover:scale-[1.02]">
-                        <i class="fab fa-yandex mr-2"></i>Войти через Yandex
-                    </a>
+                    
                 </form>
 
                 <!-- Ссылка на регистрацию -->
